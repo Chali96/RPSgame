@@ -1,7 +1,13 @@
 const computerChoiceDisplay = document.getElementById('computer-choice')
+      computerChoiceDisplay.style.setProperty('color', 'red')
+
 const userChoiceDisplay = document.getElementById('user-choice')
+      userChoiceDisplay.style.setProperty('color', 'green')
+
 const resultDisplay = document.getElementById('result')
+
 const possibleChoices = document.querySelectorAll('button')
+
 let userChoice
 let computerChoice
 let result
@@ -15,7 +21,6 @@ possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener('cli
 
 function generateComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3 + 1) // or use possibleChoices.length
-
     if (randomNumber === 1) {
         computerChoice = 'rock'
     }
@@ -34,21 +39,27 @@ function getResult() {
     }
     if (computerChoice === 'rock' && userChoice === "paper") {
         result = 'you win!'
+
     }
     if (computerChoice === 'rock' && userChoice === "scissors") {
         result = 'you lost!'
+
     }
     if (computerChoice === 'paper' && userChoice === "scissors") {
         result = 'you win!'
+
     }
     if (computerChoice === 'paper' && userChoice === "rock") {
         result = 'you lost!'
+
     }
     if (computerChoice === 'scissors' && userChoice === "rock") {
         result = 'you win!'
+
     }
     if (computerChoice === 'scissors' && userChoice === "paper") {
         result = 'you lost!'
+
     }
     resultDisplay.innerHTML = result
 }
